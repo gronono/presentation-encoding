@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Présentation Encoding</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>L'encodage</h1>
+					<h3>ou l'art de décoder la matrix</h3>
+					<p><small>Présentation par Arnaud Brunet</small></p>
+				</section>
+
+				<section>
+					<section>
+						<h2>Questions /  Remarques</h2>
+					</section>
+					<section>
+						<h2>Questions /  Remarques</h2>
+						<p>Il n'y a pas de questions bêtes</p>
+						<p><img src="img/question-bete.png" /></p>
+					</section>
+					<section>
+						<h2>Questions /  Remarques</h2>
+						<p>Il n'y a pas de honte à ne pas savoir</p>
+						<p><img src="img/question-savoir.png" /></p>
+					</section>
+					<section>
+						<h2>Questions /  Remarques</h2>
+						<p>Je peux me tromper</p>
+						<p><img src="img/question-tromper.jpg" /></p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Parlons l'ordinateur</h2>
+						<img src="img/compscibanner.jpg" />
+					</section>
+					<section>
+						<h2>Parlons l'ordinateur</h2>
+						<p class="fragment">= traitement de signaux électriques</p>
+						<p class="fragment"><img src="img/signal.png" /></p>
+						<p class="fragment">=> BINAIRE</p>
+					</section>
+					<section>
+						<h2>Binaire</h2>
+						<p class="fragment">Bits 0 / 1</p>
+						<p class="fragment">Groupés en mots de longueur variable</p>
+						<p class="fragment">=> nombres &#x2208; <strong>&#x2115;</strong></p>
+						<p class="fragment"><img src="img/binaire.gif" /></p>
+					</section>
+					<section>
+						<h2>C'est quoi alors une lettre ?</h2>
+						<p class="fragment">=> un nombre</p>
+					</section>
+				</section>
+				
+				<section>
+					<h2>Qu'est-ce que l'encodage ?</h2>
+					<p class="fragment">L'art d'associer le bon nombre à la bonne lettre</p>
+				</section>
+				
+				<section>
+					<section>
+						<h2>Les normes</h2>
+						<p class="fragment">&#x2203; trop</p>
+						<p class="fragment">souvent incompatible entre elles</p>
+					</section>
+					<section>
+						<h2>ASCII</h2>
+						<p class="fragment">mot de 7 bits</p>
+						<p class="fragment">que 128 caractères</p>
+						<p class="fragment">seulement 95 utilisables</p>
+						<p class="fragment"><a href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_code_chart" target="_blank">https://en.wikipedia.org/wiki/ASCII</a></p>
+					</section>
+					<section>
+						<h2>Les codepages</h2>
+						<p class="fragment">utilisation du 8<sup>ième</sup> bit</p>
+						<p class="fragment">&#x2203; trop</p>
+						<p class="fragment">comptabible ASCII</p>
+						<p class="fragment">incompatibilité entre eux</p>
+						<p class="fragment">spécifique constructeurs</p>
+						<p class="fragment"><a href="https://fr.wikipedia.org/wiki/Windows-1252#Table_des_caract.C3.A8res" target="_blank">Windows CP-1252</a></p>
+					</section>
+					<section>
+						<h2>ISO-8859-1 / ISO-8859-15</h2>
+						<p class="fragment">standards sur 8 bits</p>
+						<p class="fragment">comptabibles ASCII</p>						
+						<p class="fragment"><a href="https://fr.wikipedia.org/wiki/ISO_8859-1#Principe" target="_blank">latin1</a></p>
+						<p class="fragment"><a href="https://fr.wikipedia.org/wiki/ISO/CEI_8859-15#Apports_et_limitations" target="_blank">latin9</a></p>
+						<p class="fragment">pas compatible avec <a href="https://fr.wikipedia.org/wiki/Windows-1252#Table_des_caract.C3.A8res"  target="_blank">Windows CP-1252</a></p>
+					</section>
+					<section>
+						<h2>ISO-XXXX</h2>
+						<p class="fragment">une norme par langue</p>
+						<p class="fragment">ISO-8859-1...16 : europe occidental, central, du sud, du nord, cyrillique, arabe, grec, hébreu, turc, nordique, thaï, devanāgarī, balte, celtique, €, europe du sud-est</p>
+						<p class="fragment">+ les autres langues : JIS X 0213 pour le japonnais, ...</p>
+					</section>
+					<section>
+						<p><img src="img/anneau.jpg" /></p>
+						<p><small>Une norme pour les gouverner toutes. Une norme pour les consolider,</small></p>
+						<p><small>Une norme pour les réunifier toutes et dans les convensions les lier</small></p>
+						<p><small>A l'ISO où s'étendent les normes</small></p> 
+					</section>
+					<section>
+						<h2>FAUX !</h2>
+						<p class="fragment">ISO-10646 vs Unicode</p>
+					</section>
+					<section>
+						<h2>ISO-10646</h2>
+						<p class="fragment">qui connait ?</p>
+						<p class="fragment">plus d'1 million de caractères</p>
+						<p class="fragment">nomme les caractères</p>
+					</section>
+					<section>
+						<h2>Unicode</h2>
+						<p class="fragment">aujourd'hui basé sur ISO-10646</p>
+						<p class="fragment">règles de collation (interclassement)</p>
+						<p class="fragment">UTF-8, UTF-16, UTF-32</p>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h2>UTF-8</h2>
+						<p><img src="img/martine-utf8.jpg" /></p>
+					</section>
+					<section>
+						<h2>UTF-8</h2>
+						<p class="fragment">compatible avec ASCII</p>
+						<p class="fragment">de 1 à 4 octets / char</p>
+						<p class="fragment">+ efficace pour nous</p>
+						<p class="fragment">- difficile à lire</p>
+						<p class="fragment">- couteux pour les autres</p>
+						<p class="fragment">- sous ensemble de ISO-10646</p>
+						<p class="fragment">+ mais largement suffisant</p>
+					</section>
+					<section>
+						<h2>BOM</h2>
+						<p class="fragment">Byte Order Mark</p>
+						<p class="fragment">En début de fichier</p>
+						<p class="fragment">EF BB BF =  ï»¿</p>
+						<p class="fragment">optionnel</p>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h2>UTF-16</h2>
+						<p class="fragment">de 1 à 2 mots de 16 bits / char</p>
+						<p class="fragment">+ efficace pour les autres</p>
+						<p class="fragment">BOM : big ou little endian</p>
+						<p class="fragment">FE FF ou FF FE en début de fichier</p>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h2>Problèmes ?</h2>
+						<p><img src="img/problem.png"/></p>
+						<p class="fragment">connaitre l'encodage de l'origine</p>
+						<p class="fragment">spécifier l'encodage lors de la lecture</p>
+					</section>
+					
+					<section>
+						<h2>Futur probleme</h2>
+						<p><img src="img/futur-problem.png"/></p>
+						<p class="fragment">connaitre l'encodage de destination</p>
+						<p class="fragment">spécifier l'encodage lors de l'écriture</p>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h2>Cas particuliers</h2>
+					</section>
+					<section>
+						<h2>XML</h2>
+						<pre><code data-trim>
+&lt;?xml version="1.0" encoding="UTF-8" ?>
+						</code></pre>
+					</section>
+					
+					<section>
+						<h2>HTML</h2>
+						<pre><code data-trim>
+Content-Type: text/html; charset=UTF-8
+						</code></pre>
+						<pre><code data-trim>
+&lt;meta charset="UTF-8">
+						</code></pre>
+					</section>
+					<section>
+						<h2>Javascript</h2>
+						<p>embedded = celui de la page</p>
+						<p>externe = header HTTP</p>
+					</section>
+					
+					<section>
+						<h2>URL</h2>
+						<p>que ASCII</p>
+						<p class="fragment">dépend du serveur</p>
+						<p class="fragment">Tomcat = ISO-8859-1</p>
+						<p class="fragment">mais recommande UTF-8</p>
+						<p class="fragment">URIEncoding="UTF-8" + filtre + response.setContentType("text/html; charset=UTF-8")</p>
+						<p class="fragment">déja fait par spring-boot</p>
+					</section>
+				</section>
+				
+				<section>
+					<h2>Questions /  Remarques</h2>
+					<p><img src="img/question.jpg" /></p>
+				</section>
+				
+				<section>
+					<section>
+						<p>binaire = nombres &#x2208; <strong>&#x2115;</strong></p>
+						<h2 class="fragment">C'est quoi un nombre décimal ?</h2>
+						<p class="fragment">=> des entiers naturels</p>
+					</section>
+					<section>
+						<h2>IEEE-754</h2>
+						<p>3 nombres : signe, un exposant et une mantisse</p>
+						<p class="fragment">valeur = signe × mantisse × 2<sup>(exposant − décalage)</sup></p>
+						<p class="fragment">32 bits ou 64 bits</p>
+						<p class="fragment"><img src="img/float.png" /></p>
+						<p class="fragment"><img src="img/double.png" /></p>
+					</section>
+					<section>
+						<h2>IEEE-754 : 32 bits</h2>
+						<p>valeur = (-1)<sup>signe</sup> × (mantisse + 1) × 2<sup>(exposant − 127)</sup></p>
+						<p class="fragment">exposant = 8bits => [0, 255] => [-127, 128] => nombres entre ≈ 10<sup>-38</sup> et 10<sup>38</sup></p>
+						<p class="fragment">mantisse ≈ 7 chiffres significatifs</p>
+					</section>
+					<section>
+						<h2>IEEE-754 : Exemple</h2>
+						<p>8.625</p>
+						<p class="fragment">1000 , 101 = 2<sup>3</sup> + 2<sup>-1</sup> + 2<sup>-3</sup></p>
+						<p class="fragment">1,000101 x 2<sup>3</sup></p>
+						<p class="fragment">1,000101 x 2<sup>127 + 3</sup> = 1,000101 x 2<sup>10000010</sup></p>
+						<p class="fragment">0 10000010 00010100000000000000000</p>
+					</section>
+					<section>
+						<h2>10<sup>-n</sup></h2>
+						<p>1/10 ≈ 0.0001100110011001100110011001100110011001100110011...</p>
+					</section>
+				</section>
+				
+				<section>
+					<h2>Questions /  Remarques</h2>
+					<p><img src="img/question.jpg" /></p>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				slideNumber: true,
+				
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: false, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
+
